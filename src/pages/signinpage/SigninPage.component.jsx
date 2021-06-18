@@ -6,7 +6,7 @@ const SignIn = ()=>{
         <div className='SignInPage'>
             <button onClick={()=>{
                 sessionStorage.setItem('username','lokesh')
-                history1.push("/blog")
+                history1.push("/")
             }} >Submit</button>
         </div>
     )

@@ -1,7 +1,9 @@
 .blog_titles{
     cursor: pointer;
+    
 }
 
 .blog_titles:hover{
-    color: blue
+    color: blue;
+    text-decoration: underline gray;
 }

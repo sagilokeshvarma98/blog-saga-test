@@ -13,7 +13,7 @@ const NavBar = ()=>{
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                           <Link className="nav-link" to='/blog'>My Blogs</Link>
+                           <Link className="nav-link" to='/'>My Blogs</Link>
                         </li>
                         <li className="nav-item active">
                            <Link className="nav-link" to='/about'>About</Link>
@@ -39,6 +39,7 @@ const NavBar = ()=>{
             <Route path='/signin' component={SignIn}/>
             <Route path='/postblog' component={PostBlog}/>
             <Route path='/:title' component={AddBlog}/>
+            <Route component={About} />
         </Switch>
         </BrowserRouter>
     )

@@ -4,5 +4,5 @@ export const blogActions = {
 
 
 export const blogSagaTypes = {
-    getBloggerData : "CALL_GET_BLOGGER_DATA"
+    postBloggerData : "POST_BLOGGER_DATA"
 }

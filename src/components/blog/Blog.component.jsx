@@ -34,20 +34,32 @@ const Blog = ({history,match})=>{
     }
     else {
        let title_Link = blog_content.map((x,index)=>{
-        return    <div  className='blog_titles' key={index} onClick={()=>{
-                history.push(`${match.url}${x.Title}`,{
-                    x
-                })
-            }}>
-                 <h3>
-                {x.Title}
-            </h3>
-             </div>
+        return  <div key={index} className='col-sm-3 m-3'>
+                <div  className='blog_titles'  onClick={()=>{
+                    history.push(`${match.url}${x.Title}`,{
+                        x
+                    })
+                    }}>
+                <h5 className='text text-primary'>
+                    {x.Title}
+                </h5>
+                <p>
+                   Topics : {x.Blog_Content.main_title}
+                </p>
+                </div>
+            </div>
         })
     return(
-        <div>
-             <button onClick={()=>setAuth(true)}>Post</button>
+        <div className='container'>
+             <div className='row'>
+             <button className='btn btn-info m-5' style={{float:'left',width:'200px'}} onClick={()=>setAuth(true)}>Post A Blog</button>
+             </div>
+             <div className='row'>
+                 <p className='text text-info me-5'>
+                     Below are your blogs
+                 </p>
              {title_Link}
+             </div>
         </div>
     )
     }

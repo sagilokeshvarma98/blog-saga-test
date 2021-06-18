@@ -1,22 +1,16 @@
-import { put } from "redux-saga/effects"
-import { blogActions } from "../reducers/blogActionTypes"
+import axios from 'axios';
+import {call} from 'redux-saga/effects'
 
-export function* getBloggerData(){
+function getCaller(url,data){
+    return axios.post(url,data);
+}
+
+export function* getBloggerData(data){
     let user = sessionStorage.getItem('username')
-    console.log(user);
-    let bloggerData
-   yield fetch('http://localhost:3100/'+user,
-    {
-        method:"GET"
-    })
-    .then(
-        res=>res.json()
-    )
-    .then(
-        data=> {
-            console.log(data)
-            bloggerData=data
-        }
-    )
-    yield put({type:blogActions.getBloggerData,data:bloggerData})
+    try{
+        let   response = yield call(getCaller,"http://localhost:3100/"+user,data.payload)
+    }
+    catch(err){
+        yield console.log(err.message);
+    }
 }

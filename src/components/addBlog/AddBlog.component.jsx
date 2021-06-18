@@ -2,8 +2,6 @@ import './AddBlog.component.css'
 const AddBlog = ({location})=>{
     console.log(location.state.x);
     let main_title =  location.state.x.Blog_Content.main_title
-    let id = location.state.x.id
-    let title = location.state.x.Title
     let main_content = location.state.x.Blog_Content.content.map((x,index)=>{
        return <p key={index} className='text text-success'>{x}</p>
     })

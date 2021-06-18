@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+form .postBlogForm{
+  width: 500px;
+  margin-left: 32%;
+}
+form .postBlogForm input{
+  margin-bottom: 20px;
+}
+
+form .postBlogForm button{
+  margin-bottom: 10px;
+}

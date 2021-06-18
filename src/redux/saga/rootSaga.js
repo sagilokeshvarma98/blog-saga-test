@@ -3,5 +3,5 @@ import {getBloggerData} from './blogSagaActions'
 import {blogSagaTypes} from '../reducers/blogActionTypes'
 
 export function* RootSaga(){
-    yield takeEvery(blogSagaTypes.getBloggerData,getBloggerData)
+    yield takeEvery(blogSagaTypes.postBloggerData,getBloggerData)
 }
