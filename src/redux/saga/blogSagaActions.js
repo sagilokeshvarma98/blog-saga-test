@@ -9,6 +9,7 @@ export function* getBloggerData(data){
     let user = sessionStorage.getItem('username')
     try{
         let   response = yield call(getCaller,"http://localhost:3100/"+user,data.payload)
+        console.log(response);
     }
     catch(err){
         yield console.log(err.message);

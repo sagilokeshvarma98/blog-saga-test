@@ -55,7 +55,7 @@ const Blog = ({history,match})=>{
              <button className='btn btn-info m-5' style={{float:'left',width:'200px'}} onClick={()=>setAuth(true)}>Post A Blog</button>
              </div>
              <div className='row'>
-                 <p className='text text-info me-5'>
+                 <p className='text text-info me-5 my-text'>
                      Below are your blogs
                  </p>
              {title_Link}
