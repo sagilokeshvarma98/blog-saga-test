@@ -5,7 +5,8 @@ import Contact from '../../pages/contactpage/ContactPage.component'
 import AddBlog from '../addBlog/AddBlog.component'
 import SignIn from '../../pages/signinpage/SigninPage.component'
 import PostBlog from '../postBlog/PostBlog.component'
-
+import { useEffect } from 'react'
+import { useState } from 'react'
 const NavBar = ()=>{
     return(
         <BrowserRouter>
@@ -19,7 +20,7 @@ const NavBar = ()=>{
                            <Link className="nav-link" to='/about'>About</Link>
                         </li>
                         <li className="nav-item active">
-                           <Link className="nav-link" to='/contact'>Contact</Link>
+                           <Link className="nav-link" to='/'>Contact</Link> 
                         </li>
                     </ul>
             </nav>
@@ -27,17 +28,16 @@ const NavBar = ()=>{
         <Switch>
             <Route exact path='/' component={()=>{
                 if(sessionStorage.getItem('username')){
-                    return <Redirect to='/blog' />
+                    return <Redirect to='/posts-update' />
                 }
                 else{
-                   return <Redirect to='/signin' />
+                   return <SignIn/>
                 }
             }} />
-            <Route exact path='/blog' component={Blog}/>
+            <Route exact path='/posts-update' component={Blog}/>
             <Route path='/about' component={About}/>
             <Route path='/contact' component={Contact}/>
-            <Route path='/signin' component={SignIn}/>
-            <Route path='/postblog' component={PostBlog}/>
+            <Route path='/posts-display' component={PostBlog}/>
             <Route path='/:title' component={AddBlog}/>
             <Route from='*' component={About} />
         </Switch>

@@ -23,7 +23,7 @@ const Blog = ({history,match})=>{
       },[username]);
      
     if(auth){
-        return <Redirect to="/postblog" />
+        return <Redirect to="/posts-display" />
     }
     if(!blog_content){
         return(
@@ -55,7 +55,7 @@ const Blog = ({history,match})=>{
              <button className='btn btn-info m-5' style={{float:'left',width:'200px'}} onClick={()=>setAuth(true)}>Post A Blog</button>
              </div>
              <div className='row'>
-                 <p className='text text-info me-5 my-text'>
+                 <p className='text text-info me-5'>
                      Below are your blogs
                  </p>
              {title_Link}

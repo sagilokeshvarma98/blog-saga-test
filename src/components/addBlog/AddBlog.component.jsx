@@ -14,6 +14,7 @@ const AddBlog = ({location})=>{
                 </div>
     })
     return(
+        
         <div className='container' style={{textAlign:'left'}}>
             <h3 className='text text-success'>{main_title}</h3>
             {main_content}
