@@ -4,10 +4,10 @@ const SignIn = ()=>{
     let history1 = useHistory();
     return(
         <div className='SignInPage'>
-            <button onClick={()=>{
+            <button className='btn btn-success m-5' onClick={()=>{
                 sessionStorage.setItem('username','lokesh')
                 history1.push("/")
-            }} >Submit</button>
+            }} >SignIn</button>
         </div>
     )
 }
