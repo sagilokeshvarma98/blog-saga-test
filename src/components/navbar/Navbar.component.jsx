@@ -20,7 +20,7 @@ const NavBar = ()=>{
                            <Link className="nav-link" to='/about'>About</Link>
                         </li>
                         <li className="nav-item active">
-                           <Link className="nav-link" to='/'>Contact</Link> 
+                           <Link className="nav-link" to='/contact'>Contact</Link> 
                         </li>
                     </ul>
             </nav>
@@ -28,16 +28,16 @@ const NavBar = ()=>{
         <Switch>
             <Route exact path='/' component={()=>{
                 if(sessionStorage.getItem('username')){
-                    return <Redirect to='/posts-update' />
+                    return <Redirect to='/posts-display'/>
                 }
                 else{
                    return <SignIn/>
                 }
             }} />
-            <Route exact path='/posts-update' component={Blog}/>
+            <Route exact path='/posts-display' component={Blog}/>
             <Route path='/about' component={About}/>
             <Route path='/contact' component={Contact}/>
-            <Route path='/posts-display' component={PostBlog}/>
+            <Route path='/posts-update' component={PostBlog}/>
             <Route path='/:title' component={AddBlog}/>
             <Route from='*' component={About} />
         </Switch>

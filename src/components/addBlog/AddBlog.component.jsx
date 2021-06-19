@@ -1,5 +1,13 @@
 import './AddBlog.component.css'
+import SignIn from '../../pages/signinpage/SigninPage.component';
 const AddBlog = ({location})=>{
+    if(location.state===undefined){
+        return <div>
+            You should not be here. Signin to continue
+            <SignIn/>
+        </div>
+    }
+    console.log(location.state,location);
     console.log(location.state.x);
     let main_title =  location.state.x.Blog_Content.main_title
     let main_content = location.state.x.Blog_Content.content.map((x,index)=>{

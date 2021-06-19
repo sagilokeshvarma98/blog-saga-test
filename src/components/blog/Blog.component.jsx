@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { withRouter,Redirect} from 'react-router-dom'
+import SignIn from "../../pages/signinpage/SigninPage.component";
 import './Blog.component.css'
 const Blog = ({history,match})=>{
     let [username,setUser] = useState('')
@@ -21,14 +22,21 @@ const Blog = ({history,match})=>{
           )
           .catch(error => console.log(error));
       },[username]);
-     
+     if(username===null){
+         return <div>
+             You should not be here. Signin to continue
+             <SignIn/>
+         </div>
+     }
     if(auth){
-        return <Redirect to="/posts-display" />
+        return <Redirect to="/posts-update" />
     }
     if(!blog_content){
         return(
             <div>
-                loading...
+                <h5 className='text text-danger'>
+                    You JSON Server is not running on port 3100
+                </h5>
             </div>
         )
     }
